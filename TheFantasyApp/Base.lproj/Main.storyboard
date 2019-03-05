@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N3H-9M-deb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="9QN-f9-b6x">
+            <objects>
+                <viewController id="Z4t-6H-jdB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xWw-O4-TOx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="l3C-qR-Egq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="0YS-Bz-KEO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGw-Ux-eCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="250"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="wDI-JS-KRy">
+            <objects>
+                <viewController id="KX1-YL-gwo" customClass="testController" customModule="TheFantasyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fbb-eE-qgM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efy-Y4-Wrp" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="16" y="374" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="leftSearchBarTextChanged:" destination="KX1-YL-gwo" eventType="editingChanged" id="jvC-E8-MSh"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbF-jx-g4O" customClass="SearchTextField" customModule="SearchTextField">
+                                <rect key="frame" x="204" y="374" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="rightSearchBarTextChanged:" destination="KX1-YL-gwo" eventType="editingChanged" id="WY8-v8-abT"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sQt-uK-Wyv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="R9N-hi-QyW"/>
+                    <connections>
+                        <outlet property="leftSearchBar" destination="efy-Y4-Wrp" id="bkO-No-yum"/>
+                        <outlet property="rightSearchBar" destination="gbF-jx-g4O" id="nTi-i1-3ga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jyx-QU-Mcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="695.20000000000005" y="-415.14242878560725"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="U6r-Jl-rf7">
+            <objects>
+                <tabBarController id="N3H-9M-deb" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Lz-CG-xJW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KX1-YL-gwo" kind="relationship" relationship="viewControllers" id="MF6-Ak-1jR"/>
+                        <segue destination="Z4t-6H-jdB" kind="relationship" relationship="viewControllers" id="Deo-xl-ScC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ow-Yz-mEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259" y="-84"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_TheFantasyAppTests {
+  umbrella header "Pods-TheFantasyAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
