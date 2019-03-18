@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 
 public struct Player: Codable {
-    let playerID, seasonType, season: Double
+    let playerID: Double?
+    // let seasonType, season: Double?
     let team: String?
     let number: Double?
-    let name, position, positionCategory: String?
+    let name, position: String?
+    // let positionCategory: String?
     //    let activated, played, started: Double?
     //    let passingAttempts, passingCompletions, passingYards: Double?
     //    let passingCompletionPercentage, passingYardsPerAttempt: Double?
@@ -67,13 +69,13 @@ public struct Player: Codable {
     //
     enum CodingKeys: String, CodingKey {
         case playerID = "PlayerID"
-        case seasonType = "SeasonType"
-        case season = "Season"
+        //case seasonType = "SeasonType"
+        //case season = "Season"
         case team = "Team"
         case number = "Number"
         case name = "Name"
         case position = "Position"
-        case positionCategory = "PositionCategory"
+        //case positionCategory = "PositionCategory"
         //        case activated = "Activated"
         //        case played = "Played"
         //        case started = "Started"
@@ -206,6 +208,17 @@ public struct Player: Codable {
         //        case averageDraftPositionDynasty = "AverageDraftPositionDynasty"
         //        case averageDraftPosition2QB = "AverageDraftPosition2QB"
         //        case scoringDetails = "ScoringDetails"
+    }
+    
+}
+
+extension Player {
+    init(player : [String:Any]) {
+        playerID = player["PlayerID"] as? Double ?? 0
+        team = player["Team"] as? String ?? ""
+        number = player["Number"] as? Double ?? 0
+        name = player["Name"] as? String ?? ""
+        position = player["Position"] as? String ?? ""
     }
 }
 

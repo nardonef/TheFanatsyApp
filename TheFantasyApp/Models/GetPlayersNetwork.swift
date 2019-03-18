@@ -10,7 +10,7 @@ import Foundation
 
 public class GetPlayersNetwork: RequestType {
     public var path = "https://api.fantasydata.net/v3/nfl/projections/JSON/PlayerSeasonProjectionStats/2018REG"
-    public var headers = 
+    public var headers = ["Ocp-Apim-Subscription-Key" : "4f150360a8da41dc82981ce65d1d4155"]
     public var data: Request
     public typealias ResponseType = [Player]
     

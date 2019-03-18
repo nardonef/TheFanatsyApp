@@ -20,10 +20,7 @@ class testController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getting players data from api
-        //Doing all assginment in this function... how do I get this into memory in the call back
-        //getPlayersData()
-        getPlayersDataFirebase()
+        //getPlayersDataFirebase()
         setSearchBoxNames()
     }
     @IBAction func leftSearchBarTextChanged(_ sender: SearchTextField) {
@@ -36,15 +33,13 @@ class testController: UIViewController {
     
     func textChanged(text: String){
         print(text)
-        
-        
+        print(getPlayerByName(name: text, completion: showPlayer))
     }
     
-    //Call Public Players Data API
-    func getPlayersData(){
-        let getPlayers = GetPlayersNetwork();
-        getPlayers.execute(onSuccess: getPlayersSuccess, onError: getPlayersError)
-    }
+//    func getPlayersData(){
+//        let getPlayers = GetPlayersNetwork();
+//        getPlayers.execute(onSuccess: getPlayersSuccess, onError: getPlayersError)
+//    }
 
     //what to do when we successufully get data back from api
     func getPlayersSuccess(response: [Player]) {
@@ -72,18 +67,37 @@ class testController: UIViewController {
         }
     }
     
-    func getPlayersDataFirebase(){
+//    func getPlayersDataFirebase(){
+//        let db = Firestore.firestore()
+//
+//        db.collection("Players").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+//                }
+//            }
+//        }
+//    }
+    
+    //TODO do catch block refactor to model?
+    func getPlayerByName(name: String, completion: @escaping (Player) -> ()){
         let db = Firestore.firestore()
+        let docRef = db.collection("Players").document(name)
+        var returnPlayer: Any? = nil
         
-        db.collection("Players").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
+        returnPlayer = docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let player = try! FirestoreDecoder().decode(Player.self, from: document.data()!)
+                completion(player)
             }
         }
     }
+    
+    func showPlayer(player: Player?){
+        if let playerx = player {
+            print(playerx)
+        }
+    }
 }
-

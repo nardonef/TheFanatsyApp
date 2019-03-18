@@ -23,7 +23,6 @@
 		01828B04221B95FF002EEE5F /* TheFantasyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01828B03221B95FF002EEE5F /* TheFantasyAppTests.swift */; };
 		01828B0F221B95FF002EEE5F /* TheFantasyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01828B0E221B95FF002EEE5F /* TheFantasyAppUITests.swift */; };
 		01828B1F221B98AB002EEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01828B1E221B98AB002EEE5F /* GoogleService-Info.plist */; };
-		01A5A90F2228E5200037C8A2 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5A90E2228E5200037C8A2 /* Players.swift */; };
 		35B950DDE6E683E38D0FBA0B /* Pods_TheFantasyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD93CD1D26226BD53B816470 /* Pods_TheFantasyAppTests.framework */; };
 		ABEF6C76E6A3F28B4E47B48F /* Pods_TheFantasyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A237DD67A4A3C7BC21B9E8 /* Pods_TheFantasyApp.framework */; };
 /* End PBXBuildFile section */
@@ -68,7 +67,6 @@
 		01828B0E221B95FF002EEE5F /* TheFantasyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFantasyAppUITests.swift; sourceTree = "<group>"; };
 		01828B10221B95FF002EEE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01828B1E221B98AB002EEE5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		01A5A90E2228E5200037C8A2 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		456B42CD2BFC26709D94C90D /* Pods-TheFantasyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFantasyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheFantasyApp/Pods-TheFantasyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		65DDBBEAA4A01287ED5880FC /* Pods-TheFantasyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFantasyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheFantasyAppTests/Pods-TheFantasyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		6EDEF730C77A392597EB9662 /* Pods-TheFantasyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFantasyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheFantasyApp/Pods-TheFantasyApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 			children = (
 				01104E09221BA08200E3D066 /* Player.swift */,
 				01104E0B221BA0BB00E3D066 /* GetPlayersNetwork.swift */,
-				01A5A90E2228E5200037C8A2 /* Players.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -461,7 +458,6 @@
 				01104E18221BA31500E3D066 /* URLSessionNetworkDispatcher.swift in Sources */,
 				01828AF4221B95FE002EEE5F /* TheFantasyApp.xcdatamodeld in Sources */,
 				01104E15221BA16100E3D066 /* NetworkDispatcher.swift in Sources */,
-				01A5A90F2228E5200037C8A2 /* Players.swift in Sources */,
 				01828AEC221B95FE002EEE5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
